@@ -169,6 +169,7 @@ def fetch_update(output_path, url, ignore_existing_files, verify_zip):
 
     total_size = int(r.headers.get('content-length', 0)) # get content length
     downloaded_size = 0
+    download_speed = 0
     bar_width = 50     # could use os.get_terminal_size().columns to adapt the screen width
     start_time = time.time()  # time of start download
     with open(fpath, 'wb') as fd:
